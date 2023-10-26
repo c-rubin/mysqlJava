@@ -13,5 +13,5 @@ jobs:
         run: sudo service mysql start
 
       - name: create table
-        run: mysql -u root -p actionsJava database.sql
+        run: mysql -u root -p actionsJava < database.sql
         shell: bash
