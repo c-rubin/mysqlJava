@@ -1,4 +1,4 @@
-name: Setup MySQL Database
+name: MySQL Java Application
 
 on: [push]
 
@@ -15,11 +15,11 @@ jobs:
       with:
         mysql-version: '10.4'
         mysql-port: 3306
-        mysql-root-password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+        mysql-root-password: ''
         mysql-database: actionsJava
 
     - name: Import Database
       run: |
         mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} actionsJava < database.sql
       env:
-        MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+        MYSQL_ROOT_PASSWORD: ''
