@@ -1,0 +1,25 @@
+name: Setup MySQL Database
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up MySQL
+      uses: mysqljs/setup-mysql@v2
+      with:
+        mysql-version: '10.4'
+        mysql-port: 3306
+        mysql-root-password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+        mysql-database: actionsJava
+
+    - name: Import Database
+      run: |
+        mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} actionsJava < database.sql
+      env:
+        MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
