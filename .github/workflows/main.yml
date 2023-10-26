@@ -15,4 +15,4 @@ jobs:
     - name: Compile and Test
       run: |
         javac Main.java
-        java -cp ./mysql-connector-java-8.2.0.jar Main
+        java -cp .:mysql-connector-java-8.2.0.jar Main
