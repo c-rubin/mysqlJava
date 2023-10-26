@@ -15,6 +15,6 @@ jobs:
       - name: create table
         # run: mysql -u root -p actionsJava < database.sql
         run: |
-          msql -u root -p
+          mysql -u root -p
           GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'password';
         shell: bash
