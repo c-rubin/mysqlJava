@@ -10,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: hello world
-        # run: sudo service mysql start
+        run: sudo service mysql start
+
+      - name: create table
         run: mysql -u root -p database.sql
         shell: bash
