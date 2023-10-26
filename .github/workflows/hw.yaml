@@ -10,5 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: hello world
-        run: mysql.server
+        run: /var/run/mysqld/mysql.server
         shell: bash
