@@ -13,7 +13,7 @@ jobs:
         run: sudo service mysql start
 
       - name: create table
-        run: sudo mysql -u root -p root actionsJava < database.sql
+        run: sudo mysql -u root -proot actionsJava < database.sql
         # run: |
         #   mysql -u root -p
         #   GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'password';
