@@ -6,7 +6,7 @@ public class Main {
     public static void main(String args[]){
         String url="jdbc:mysql://localhost/actionsJava";
         String user="root";
-        String password ="";
+        String password ="root";
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
 
