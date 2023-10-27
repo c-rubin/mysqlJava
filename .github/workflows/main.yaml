@@ -1,4 +1,4 @@
-name: Combined Workflow
+name: Setup
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Start MySQL
+      - name: Start MySQL and Java program
         run: |
           sudo service mysql start
           sudo service mysql start
@@ -20,4 +20,7 @@ jobs:
           sudo mysql -u root -proot actionsJava < database.sql
           javac Main.java
           java -cp .:mysql-connector-java-8.2.0.jar Main
+          1
+          2
+          raku4
         shell: bash
