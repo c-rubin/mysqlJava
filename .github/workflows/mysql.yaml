@@ -1,4 +1,4 @@
-name: Hw wf
+name: Setup mysql and create database
 
 on:
   push: 
@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: hello world
+      - name: start mysql
         run: sudo service mysql start
 
-      - name: create table
+      - name: create database
         run: |
           sudo mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS actionsJava;"
           sudo mysql -u root -proot actionsJava < database.sql
