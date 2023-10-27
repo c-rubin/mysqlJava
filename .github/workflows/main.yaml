@@ -18,5 +18,6 @@ jobs:
           sudo mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS actionsJava;"
           sudo mysql -u root -proot actionsJava < database.sql
           javac Main.java
+          echo 1 | java -cp .:mysql-connector-java-8.2.0.jar Main
           java -cp .:mysql-connector-java-8.2.0.jar Main < input.txt
         shell: bash
