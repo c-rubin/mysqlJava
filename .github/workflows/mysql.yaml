@@ -15,6 +15,7 @@ jobs:
       - name: Start MySQL
         run: |
           sudo service mysql start
+          sudo service mysql start
           sudo mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS actionsJava;"
           sudo mysql -u root -proot actionsJava < database.sql
         shell: bash
@@ -34,5 +35,6 @@ jobs:
 
       - name: Compile and Test
         run: |
+          sudo service mysql start
           javac Main.java
           java -cp .:mysql-connector-java-8.2.0.jar Main
