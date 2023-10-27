@@ -19,7 +19,4 @@ jobs:
           sudo mysql -u root -proot actionsJava < database.sql
           javac Main.java
           java -cp .:mysql-connector-java-8.2.0.jar Main < input.txt
-          1
-          2
-          raku4
         shell: bash
